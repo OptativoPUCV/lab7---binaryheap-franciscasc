@@ -62,27 +62,46 @@ void heap_pop(Heap* pq){
     //caso 1 
     if(pq->heapArray[2*h + 1].data == NULL && pq->heapArray[2*h + 2].data == NULL) 
       break;
-    //if((2*h + 1) > pq->size - 1 && (2*h + 2) > pq->size - 1)
      
     //caso 2 
-    //a
-    if(pq->heapArray[h].priority > pq->heapArray[2*h + 1].priority && (2*h + 2) > pq->size - 1){  
-      break;
+    if(pq->heapArray[2*h + 1].data != NULL && pq->heapArray[2* h + 2].data == NULL){
+      //a
+      if(pq->heapArray[h].priority > pq->heapArray[2*h + 1].priority)
+          break;
+      //b
+      else if(pq->heapArray[h].priority < pq->heapArray[2*h + 1].priority){
+        aux = pq->heapArray[h];
+        pq->heapArray[h] = pq->heapArray[2*h + 1];
+        pq->heapArray[2*h + 1] = aux;
+        break;
+      }
     }
-    //b
-    else if(pq->heapArray[h].priority < pq->heapArray[2*h + 1].priority){ 
-      aux = pq->heapArray[h];
-      pq->heapArray[h] = pq->heapArray[2*h + 1];
-      pq->heapArray[2*h + 1] = aux;
-      //break;
-    }
-
-    //caso 3
-    //a
-    if(pq->heapArray[h].priority > pq->heapArray[2*h + 1].priority){
-      if(pq->heapArray[h].priority < pq->heapArray[2*h + 2].priority)
+    else if(pq->heapArray[2*h + 1].data == NULL && pq->heapArray[2* h + 2].data != NULL){
+      if(pq->heapArray[h].priority > pq->heapArray[2*h + 2].priority)
+          break;
+      //b
+      else if(pq->heapArray[h].priority < pq->heapArray[2*h + 2].priority){
+        aux = pq->heapArray[h];
+        pq->heapArray[h] = pq->heapArray[2*h + 2];
+        pq->heapArray[2*h + 2] = aux;
         break;
     }
+
+    /*caso 3
+    aux = pq->heapArray[h];
+    if(pq->heapArray[2*h + 1].data != NULL && pq->heapArray[2*h + 2].data != NULL){
+      //a
+      if(pq->heapArray[h].priority > pq->heapArray[2*h + 1].priority){
+        if(pq->heapArray[h].priority < pq->heapArray[2*h + 2].priority)
+          break;
+      }
+
+
+      
+    }
+    
+    
+    
     //b
     else if(pq->heapArray[h].priority < pq->heapArray[2*h + 1].priority){
       aux = pq->heapArray[h];
@@ -102,7 +121,7 @@ void heap_pop(Heap* pq){
       if(pq->heapArray[h].priority < pq->heapArray[2*h + 1].priority && pq->heapArray[h].priority < pq->heapArray[2*h + 2].priority){
         
       }
-    }
+    }*/
     
     h++;
   }
