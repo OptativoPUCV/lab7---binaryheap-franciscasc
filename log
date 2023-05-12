@@ -1050,3 +1050,14 @@ Fri 12 May 2023 10:50:21 PM UTC:
  tests:  7|1
 total_score: 45/70
 cfecdca
+Fri 12 May 2023 10:50:35 PM UTC: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:79:14: error: variable ‘mayor’ set but not used [-Werror=unused-but-set-variable]
+   79 |     heapElem mayor;
+      |              ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+0d54896
