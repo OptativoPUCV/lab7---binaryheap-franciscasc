@@ -123,6 +123,7 @@ void heap_pop(Heap* pq){
         
       }
     h++;
+    pq->size--;
   }
 }
 
