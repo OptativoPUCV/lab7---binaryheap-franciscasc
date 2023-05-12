@@ -56,7 +56,9 @@ void heap_pop(Heap* pq){
   heapElem aux =  pq->heapArray[(pq->size) - 1];
   pq->heapArray[(pq->size) - 1] =  pq->heapArray[0];
   pq->heapArray[0] = aux;
-
+  pq->heapArray[(pq->size) - 1].priority = 0;
+  pq->size -= 1;
+  
   while(h < (pq->size) - 1){
     //caso 1 
     if(pq->heapArray[2*h + 1].data == NULL && pq->heapArray[2*h + 2].data == NULL) 
@@ -76,12 +78,12 @@ void heap_pop(Heap* pq){
         //break;
       }
     } 
-    else if(pq->heapArray[2*h + 1].data == NULL && pq->heapArray[2* h + 2].data != NULL){
-      //a
+    /*else if(pq->heapArray[2*h + 1].data == NULL && pq->heapArray[2* h + 2].data != NULL){
+      a
       if(pq->heapArray[h].priority > pq->heapArray[2*h + 2].priority)
           break;
       //b
-      else if(pq->heapArray[h].priority < pq->heapArray[2*h + 2].priority){
+      if(pq->heapArray[h].priority < pq->heapArray[2*h + 2].priority){
         aux = pq->heapArray[h];
         pq->heapArray[h] = pq->heapArray[2*h + 2];
         pq->heapArray[2*h + 2] = aux;
@@ -89,7 +91,7 @@ void heap_pop(Heap* pq){
         //break;
     }
 
-    //caso 3
+    caso 3
     if(pq->heapArray[2*h + 1].data != NULL && pq->heapArray[2*h + 2].data != NULL){
       //a
       if(pq->heapArray[h].priority > pq->heapArray[2*h + 1].priority){
@@ -125,12 +127,11 @@ void heap_pop(Heap* pq){
           h = ((2*h) + 2);        
         }
       } 
-    }
+    }*/
     //h++;
   }
-   
+  }
   //} 
-  pq->size--;
 }
 
 Heap* createHeap(){
