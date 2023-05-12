@@ -60,6 +60,10 @@ void heap_pop(Heap* pq){
 
   while(h != (pq->size) - 1){
     
+    //caso 1 
+    if((2*h + 1) > pq->size - 1 && (2*h + 2) > pq->size - 1)
+      break;
+    
     //caso 2 
     //a
     if(pq->heapArray[h].priority > pq->heapArray[2*h + 1].priority && (2*h + 2) > pq->size - 1){  
@@ -96,7 +100,12 @@ void heap_pop(Heap* pq){
       pq->heapArray[2*h + 2] = aux;
       //break;
     }
-    
+    //d
+    else{
+      if(pq->heapArray[h].priority < pq->heapArray[2*h + 1].priority && pq->heapArray[h].priority < pq->heapArray[2*h + 2].priority){
+        
+      }
+    }
     h++;
   }
   
