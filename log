@@ -1133,3 +1133,9 @@ Fri 12 May 2023 11:12:00 PM UTC:
  tests:  7|1
 total_score: 50/70
 f89ed7b
+Fri 12 May 2023 11:45:05 PM UTC: 
+ heap.c | 14 +++++++++-----
+ 1 file changed, 9 insertions(+), 5 deletions(-)
+ tests:  7|1
+total_score: 50/70
+00a2424
