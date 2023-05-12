@@ -1109,3 +1109,9 @@ heap.c:78:24: error: ‘mayor.data’ may be used uninitialized in this function
 cc1: all warnings being treated as errors
 Compilation failed
 f8d0d90
+Fri 12 May 2023 11:03:36 PM UTC: 
+ heap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+ tests:  7|1
+total_score: 50/70
+de9a359

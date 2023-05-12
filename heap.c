@@ -65,8 +65,7 @@ void heap_pop(Heap* pq){
     //ver cuál hijo es mayor 
     heapElem mayor;
     if(pq->heapArray[(2*h) +1].priority > pq->heapArray[(2*h) + 2].priority){
-      pq->heapArray[(2*h) + 2] = pq->heapArray[(2*h) + 1];
-      //mayor = ;
+      mayor = pq->heapArray[(2*h) + 1];
     }
     else{
       mayor = pq->heapArray[(2*h) + 2];
