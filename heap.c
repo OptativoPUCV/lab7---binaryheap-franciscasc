@@ -48,7 +48,6 @@ void heap_push(Heap* pq, void* data, int priority){
     h = (h + 1)/2;
     //break;
   }
-  return;
 }
 
 
