@@ -78,3 +78,9 @@ heap.c:23:28: error: ‘heapElem’ {aka ‘struct nodo’} has no member named 
       |                            ^
 Compilation failed
 1e1236b
+Fri 12 May 2023 12:40:43 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|3
+total_score: 10/70
+f96bb3c
