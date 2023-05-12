@@ -36,3 +36,14 @@ Fri 12 May 2023 12:25:55 PM UTC:
  tests:  0|4
 total_score: 0/70
 647bf48
+Fri 12 May 2023 12:26:30 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+test.c: In function ‘createHeap’:
+heap.c:38:59: error: ‘*M.capac’ is used uninitialized [-Werror=uninitialized]
+   38 |   M->heapArray = (heapElem *) malloc(sizeof(heapElem) * (M->capac) *3);
+      |                                                         ~~^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+360ae49
