@@ -76,7 +76,7 @@ void heap_pop(Heap* pq){
         break;
       }
     }
-    else if(pq->heapArray[2*h + 1].data == NULL && pq->heapArray[2* h + 2].data != NULL){
+    /*else if(pq->heapArray[2*h + 1].data == NULL && pq->heapArray[2* h + 2].data != NULL){
       if(pq->heapArray[h].priority > pq->heapArray[2*h + 2].priority)
           break;
       //b
@@ -87,7 +87,7 @@ void heap_pop(Heap* pq){
         break;
     }
 
-    /*caso 3
+    caso 3
     aux = pq->heapArray[h];
     if(pq->heapArray[2*h + 1].data != NULL && pq->heapArray[2*h + 2].data != NULL){
       //a
