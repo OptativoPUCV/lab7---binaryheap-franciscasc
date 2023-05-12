@@ -74,7 +74,7 @@ void heap_pop(Heap* pq){
       menor = pq->heapArray[(2*h) + 1];
     }
 
-    if(pq->heapArray[(h - 1)/2].priority < mayor.priority && pq->heapArray[(h - 1)/2].priority > menor.priority){
+    if(pq->heapArray[(h - 1)/2].priority < mayor.priority || pq->heapArray[(h - 1)/2].priority > menor.priority){
       printf("]\n");
       aux = mayor;
       mayor = pq->heapArray[(h -1)/2];
