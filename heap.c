@@ -46,10 +46,12 @@ void heap_push(Heap* pq, void* data, int priority){
 void heap_pop(Heap* pq){
   int h = 0;
   heapElem * aux = (heapElem *) malloc(sizeof(heapElem));
-  if(pq->heapArray[pq->size].data != NULL){
+  while(pq->heapArray[pq->size].data != NULL){
     aux = pq->heapArray[pq->size].data;
     pq->heapArray[h].data = aux;
     pq->heapArray[pq->size].data = NULL;
+    pq->size--;
+    break;
   }
   //return NULL;
 }
