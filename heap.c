@@ -66,6 +66,25 @@ void heap_pop(Heap* pq){
 
     if(pq->heapArray[(2*h + 1)].data == NULL && pq->heapArray[(2*h + 2)].data == NULL) return;
     break;
+    //caso 2
+    if(pq->heapArray[(2*h)+1].data != NULL && pq->heapArray[(2*h)+2].data == NULL){
+      if(pq->heapArray[h].priority < pq->heapArray[(2*h) + 1].priority){
+        aux = pq->heapArray[h];
+        pq->heapArray[h] = pq->heapArray[(2*h) + 1];
+        pq->heapArray[(2*h) + 1] = aux;
+        h = (2*h)+1;
+      }
+    }
+    else if(pq->heapArray[(2*h)+1].data == NULL && pq->heapArray[(2*h)+2].data != NULL)
+    {
+      if(pq->heapArray[h].priority < pq->heapArray[(2*h) + 2].priority){
+        aux = pq->heapArray[h];
+        pq->heapArray[h] = pq->heapArray[(2*h) + 2];
+        pq->heapArray[(2*h) + 2] = aux;
+        h = (2*h)+2;
+      }
+    }
+    
   }
 
 
