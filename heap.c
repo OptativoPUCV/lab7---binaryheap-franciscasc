@@ -60,7 +60,7 @@ void heap_pop(Heap* pq){
   pq->heapArray[(pq->size) - 1].priority = 0;
   pq->size--;
 
-  while(h < pq->size){
+  while(h < pq->size - 1){
     printf("h");
     break;
   }
