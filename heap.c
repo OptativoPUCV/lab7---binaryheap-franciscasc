@@ -57,7 +57,7 @@ void heap_pop(Heap* pq){
   pq->heapArray[(pq->size) - 1] =  pq->heapArray[0];
   pq->heapArray[0] = aux;
 
-  while(h != (pq->size) - 1){
+  while(h < (pq->size) - 1){
     //caso 1 
     if(pq->heapArray[2*h + 1].data == NULL && pq->heapArray[2*h + 2].data == NULL) 
       break;
@@ -72,10 +72,11 @@ void heap_pop(Heap* pq){
         aux = pq->heapArray[h];
         pq->heapArray[h] = pq->heapArray[2*h + 1];
         pq->heapArray[2*h + 1] = aux;
+        h = ((2*h) +1);
         //break;
       }
     } 
-    /*else if(pq->heapArray[2*h + 1].data == NULL && pq->heapArray[2* h + 2].data != NULL){
+    else if(pq->heapArray[2*h + 1].data == NULL && pq->heapArray[2* h + 2].data != NULL){
       //a
       if(pq->heapArray[h].priority > pq->heapArray[2*h + 2].priority)
           break;
@@ -84,8 +85,9 @@ void heap_pop(Heap* pq){
         aux = pq->heapArray[h];
         pq->heapArray[h] = pq->heapArray[2*h + 2];
         pq->heapArray[2*h + 2] = aux;
+        h = ((2*h + 2));
         //break;
-    }*/
+    }
 
     //caso 3
     if(pq->heapArray[2*h + 1].data != NULL && pq->heapArray[2*h + 2].data != NULL){
@@ -95,18 +97,18 @@ void heap_pop(Heap* pq){
           break;
       }
       //b
-      h = 0;
-      if(pq->heapArray[h].priority < pq->heapArray[2*h + 1].priority){
+      else if(pq->heapArray[h].priority < pq->heapArray[2*h + 1].priority){
         aux = pq->heapArray[h];
         pq->heapArray[h] = pq->heapArray[2*h + 1];
         pq->heapArray[2*h + 1] = aux;
+        h = ((2*h) +1);
       }
       //c
-      h = (2*h +1);
-      if(pq->heapArray[h].priority < pq->heapArray[2*h + 2].priority){
+      else if(pq->heapArray[h].priority < pq->heapArray[2*h + 2].priority){
         aux = pq->heapArray[h];
         pq->heapArray[h] = pq->heapArray[2*h + 2];
         pq->heapArray[2*h + 2] = aux;
+        h = ((2*h) + 2);
         //break;
       }
       //d
@@ -114,20 +116,17 @@ void heap_pop(Heap* pq){
         aux = pq->heapArray[h];
         pq->heapArray[h] = pq->heapArray[2*h + 1];
         pq->heapArray[2*h + 1] = aux;
+        h = ((2*h) + 1);
         
         if(pq->heapArray[h].priority < pq->heapArray[2*h + 2].priority){
           aux = pq->heapArray[h];
           pq->heapArray[h] = pq->heapArray[2*h + 2];
           pq->heapArray[2*h + 2] = aux;
+          h = ((2*h) + 2);        
         }
-      }
-      /*else if(pq->heapArray[h].priority > pq->heapArray[2*h + 1].priority){
-        if(pq->heapArray[h].priority < pq->heapArray[2*h + 2].priority)
-          break;
-      }*/
-        
+      } 
     }
-    h++;
+    //h++;
   }
    
   //} 
