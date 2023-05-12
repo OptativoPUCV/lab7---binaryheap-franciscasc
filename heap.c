@@ -86,9 +86,9 @@ void heap_pop(Heap* pq){
         h = (2*h) + 2;
       } 
       else{
-        if(pq->heapArray[(h - 1)/2].priority > mayor.priority){
+        if(pq->heapArray[(h - 1)/2].priority > mayor.priority)
           break;
-      }
+      
       
     }
 
