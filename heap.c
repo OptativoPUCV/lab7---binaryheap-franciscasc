@@ -59,17 +59,21 @@ void heap_pop(Heap* pq){
   //pq->heapArray[(pq->size) - 1].data = NULL;
 
   while(h != (pq->size) - 1){
+    
+    //caso 2 
+    //a
+    if(pq->heapArray[h].priority > pq->heapArray[2*h + 1].priority){  
+      /*aux = pq->heapArray[h];
+      pq->heapArray[h] = pq->heapArray[2*h + 1];
+      pq->heapArray[2*h + 1] = aux;*/
+      break;
+    }
+    
+    //b
     if(pq->heapArray[h].priority < pq->heapArray[2*h + 1].priority){  
       aux = pq->heapArray[h];
       pq->heapArray[h] = pq->heapArray[2*h + 1];
       pq->heapArray[2*h + 1] = aux;
-      break;
-    }
-    
-    if(pq->heapArray[h].priority > pq->heapArray[2*h + 2].priority){  
-      aux = pq->heapArray[2*h + 2];
-      pq->heapArray[2*h + 2] = pq->heapArray[h];
-      pq->heapArray[h] = aux;
       break;
     }
 
