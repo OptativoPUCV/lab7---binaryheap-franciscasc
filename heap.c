@@ -62,9 +62,29 @@ void heap_pop(Heap* pq){
 
   while(h < pq->size - 1){
     //printf("h");
-    if(pq->heapArray[(2*h + 1)].data == NULL && pq->heapArray[(2*h + 2)].data == NULL) return;
+    if(pq->heapArray[(2*h + 1)].priority > pq->size - 1 && pq->heapArray[(2*h + 2)].priority > pq->size - 1) break;
+
+    //ver cual hijo es mayor 
+    heapElem mayor;
+    if(pq->heapArray[(2*h) +1].priority > pq->heapArray[(2*h) + 2].priority){
+      mayor = pq->heapArray[(2*h) + 1];
+      
+    }
+    else{
+      mayor = pq->heapArray[(2*h) + 2];
+    }
     
-    //caso 2
+    if(pq->heapArray[h].priority < mayor.priority){
+      aux = mayor;
+      mayor = pq->heapArray[h];
+      pq->heapArray[h] = aux;
+      
+      
+    }
+    
+    
+    
+    /*caso 2
     if(pq->heapArray[(2*h)+1].data != NULL && pq->heapArray[(2*h)+2].data == NULL){
       if(pq->heapArray[h].priority < pq->heapArray[(2*h) + 1].priority){
         aux = pq->heapArray[h];
@@ -81,7 +101,7 @@ void heap_pop(Heap* pq){
         pq->heapArray[(2*h) + 2] = aux;
         h = (2*h)+2;
       }
-    }
+    }*/
     break;
     
   }
