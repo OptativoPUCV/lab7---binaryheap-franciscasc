@@ -76,6 +76,12 @@ void heap_pop(Heap* pq){
       break;
     }
 
+    //caso 3
+    //a
+    if(pq->heapArray[h].priority > pq->heapArray[2*h + 1].priority){
+      if(pq->heapArray[h].priority < pq->heapArray[2*h + 2].priority)
+        break;
+    }
     
     h++;
   }
