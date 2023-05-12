@@ -1097,3 +1097,15 @@ Fri 12 May 2023 11:01:52 PM UTC:
  tests:  7|1
 total_score: 45/70
 bd3382b
+Fri 12 May 2023 11:03:00 PM UTC: 
+ heap.c | 19 ++-----------------
+ 1 file changed, 2 insertions(+), 17 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:78:24: error: ‘mayor.priority’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
+   78 |       pq->heapArray[h] = aux;
+      |       ~~~~~~~~~~~~~~~~~^~~~~
+heap.c:78:24: error: ‘mayor.data’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
+cc1: all warnings being treated as errors
+Compilation failed
+f8d0d90
