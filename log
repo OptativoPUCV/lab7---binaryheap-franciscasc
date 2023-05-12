@@ -170,3 +170,14 @@ Fri 12 May 2023 01:11:37 PM UTC:
  tests:  2|2
 total_score: 20/70
 86d4d70
+Fri 12 May 2023 01:16:37 PM UTC: 
+ heap.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:49:6: error: unused variable ‘h’ [-Werror=unused-variable]
+   49 |  int h = 0;
+      |      ^
+cc1: all warnings being treated as errors
+Compilation failed
+a7d78d8
