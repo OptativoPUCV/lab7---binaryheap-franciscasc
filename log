@@ -938,3 +938,13 @@ heap.c:65:14: error: variable ‘mayor’ set but not used [-Werror=unused-but-s
 cc1: all warnings being treated as errors
 Compilation failed
 d7f88f9
+Fri 12 May 2023 10:27:38 PM UTC: 
+ heap.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:77:23: error: expected statement before ‘)’ token
+   77 |       h = (2*h) + 1;*/)
+      |                       ^
+Compilation failed
+27a51ab
