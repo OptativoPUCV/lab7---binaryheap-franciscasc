@@ -64,12 +64,12 @@ void heap_pop(Heap* pq){
     //ver cuál hijo es mayor 
     heapElem mayor, menor;
     if(pq->heapArray[(2*h) +1].priority > pq->heapArray[(2*h) + 2].priority){
-      printf(".");
+      printf(".\n");
       mayor = pq->heapArray[(2*h) + 1];
       menor = pq->heapArray[(2*h) + 2];
     }
     else{
-      printf(".");
+      printf(".\n");
       mayor = pq->heapArray[(2*h) + 2];
       menor = pq->heapArray[(2*h) + 1];
     }
