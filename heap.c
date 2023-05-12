@@ -63,9 +63,9 @@ void heap_pop(Heap* pq){
       aux = pq->heapArray[h];
       pq->heapArray[h] = pq->heapArray[2*h + 1];
       pq->heapArray[2*h + 1] = aux;
-      h++;
       break;
     }
+    h++;
   }
   
   /* 
