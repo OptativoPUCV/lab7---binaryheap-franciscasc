@@ -239,3 +239,14 @@ Fri 12 May 2023 01:32:18 PM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 f1a66dc
+Fri 12 May 2023 01:43:20 PM UTC: 
+ heap.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:55:7: error: unused variable ‘h’ [-Werror=unused-variable]
+   55 |   int h = 0;
+      |       ^
+cc1: all warnings being treated as errors
+Compilation failed
+8367003
