@@ -67,7 +67,6 @@ void heap_pop(Heap* pq){
       break;
     }
     
-  }
   
   //return NULL;
 }
