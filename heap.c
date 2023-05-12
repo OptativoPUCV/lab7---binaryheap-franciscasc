@@ -58,7 +58,7 @@ void heap_pop(Heap* pq){
   pq->heapArray[(pq->size) - 1] =  pq->heapArray[h];
   pq->heapArray[h] = aux;
   pq->heapArray[(pq->size) - 1].priority = 0;
-  pq->size--;
+  //pq->size--;
 
   while(h < pq->size - 1){
     //ver cuál hijo es mayor 
@@ -84,43 +84,8 @@ void heap_pop(Heap* pq){
 
     if(pq->heapArray[(2*h + 1)].priority > pq->size - 1 && pq->heapArray[(2*h + 2)].priority > pq->size - 1) 
       break;
-    else{
-      continue;
-    }
-    
-    
-    //break;
-    
   }
 
-
-  
-  /*while(h < pq->size - 1){
-    printf("h");
-    if(pq->heapArray[(2*h) + 1].data == NULL && pq->heapArray[(2*h) + 2].data == NULL){
-      break;
-    }
-
-    //caso 2
-    if(pq->heapArray[(2*h)+1].data != NULL && pq->heapArray[(2*h)+2].data == NULL){
-      if(pq->heapArray[h].priority < pq->heapArray[(2*h) + 1].priority){
-        aux = pq->heapArray[h];
-        pq->heapArray[h] = pq->heapArray[(2*h) + 1];
-        pq->heapArray[(2*h) + 1] = aux;
-        h = (2*h)+1;
-      }
-    }
-    else if(pq->heapArray[(2*h)+1].data == NULL && pq->heapArray[(2*h)+2].data != NULL)
-    {
-      if(pq->heapArray[h].priority < pq->heapArray[(2*h) + 2].priority){
-        aux = pq->heapArray[h];
-        pq->heapArray[h] = pq->heapArray[(2*h) + 2];
-        pq->heapArray[(2*h) + 2] = aux;
-        h = (2*h)+2;
-      }
-    }
-    
-  }*/
 }
 
 Heap* createHeap(){
