@@ -19,6 +19,7 @@ typedef struct Heap{
 
 void* heap_top(Heap* pq){
   int h = 0;
+  if(pq->heapArray->data == NULL) return NULL;
   if(pq->heapArray[h].priority > pq->heapArray[h + 1].priority){
     return pq->heapArray->data;
   }
