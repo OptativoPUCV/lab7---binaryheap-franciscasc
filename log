@@ -554,3 +554,18 @@ heap.c:128:1: error: expected identifier or ‘(’ before ‘}’ token
       | ^
 Compilation failed
 e07ad00
+Fri 12 May 2023 04:01:04 PM UTC: 
+ heap.c | 67 +++---------------------------------------------------------------
+ 1 file changed, 3 insertions(+), 64 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:55:7: error: unused variable ‘h’ [-Werror=unused-variable]
+   55 |   int h = 0;
+      |       ^
+heap.c: At top level:
+heap.c:67:1: error: expected identifier or ‘(’ before ‘}’ token
+   67 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+afbb89c
