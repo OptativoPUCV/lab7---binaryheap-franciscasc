@@ -750,3 +750,14 @@ Fri 12 May 2023 07:08:23 PM UTC:
  tests:  7|1
 total_score: 50/70
 70117ec
+Fri 12 May 2023 07:09:30 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:65:21: error: variable ‘menor’ set but not used [-Werror=unused-but-set-variable]
+   65 |     heapElem mayor, menor;
+      |                     ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+75053f5
