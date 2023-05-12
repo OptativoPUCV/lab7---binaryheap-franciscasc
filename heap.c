@@ -61,7 +61,10 @@ void heap_pop(Heap* pq){
   pq->size--;
 
   while(h < pq->size - 1){
-    printf("h");
+    //printf("h");
+    
+
+    if(pq->heapArray[(2*h + 1)].data == NULL && pq->heapArray[(2*h + 2)].data == NULL) return;
     break;
   }
 
