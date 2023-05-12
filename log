@@ -68,3 +68,13 @@ Fri 12 May 2023 12:39:44 PM UTC:
  1 file changed, 4 insertions(+)
  tests:  0|0
 2ecea02
+Fri 12 May 2023 12:40:35 PM UTC: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_top’:
+heap.c:23:28: error: ‘heapElem’ {aka ‘struct nodo’} has no member named ‘p’
+   23 |     return pq->heapArray[h].p->data;
+      |                            ^
+Compilation failed
+1e1236b
