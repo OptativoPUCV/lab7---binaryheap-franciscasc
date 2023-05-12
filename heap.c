@@ -69,7 +69,7 @@ void heap_pop(Heap* pq){
       menor = pq->heapArray[(2*h) + 2];
     }
     else{
-      printf(".\n");
+      printf(",\n");
       mayor = pq->heapArray[(2*h) + 2];
       menor = pq->heapArray[(2*h) + 1];
     }
