@@ -47,3 +47,14 @@ heap.c:38:59: error: ‘*M.capac’ is used uninitialized [-Werror=uninitialized
 cc1: all warnings being treated as errors
 Compilation failed
 360ae49
+Fri 12 May 2023 12:26:47 PM UTC: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+test.c: In function ‘createHeap’:
+heap.c:37:39: error: ‘M’ is used uninitialized [-Werror=uninitialized]
+   37 |   M = (Heap *) malloc(sizeof(Heap)* (M->capac) *3);
+      |                                     ~~^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+90f54ac
