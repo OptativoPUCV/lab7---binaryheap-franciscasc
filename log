@@ -1061,3 +1061,9 @@ heap.c:79:14: error: variable ‘mayor’ set but not used [-Werror=unused-but-s
 cc1: all warnings being treated as errors
 Compilation failed
 0d54896
+Fri 12 May 2023 10:51:58 PM UTC: 
+ heap.c | 23 ++++-------------------
+ 1 file changed, 4 insertions(+), 19 deletions(-)
+ tests:  7|1
+total_score: 50/70
+f9a3877
