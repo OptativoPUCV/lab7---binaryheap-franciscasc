@@ -89,8 +89,9 @@ void heap_pop(Heap* pq){
       break;
     
   }
-  h = (h - 1)/2;
   pq->heapArray[h] = aux;
+  h = (h - 1)/2;
+  
 }
 
 Heap* createHeap(){
