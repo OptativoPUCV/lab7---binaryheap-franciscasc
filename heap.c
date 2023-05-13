@@ -85,7 +85,7 @@ void heap_pop(Heap* pq){
       h = menor;
     }
 
-    if((h - 1)/2 > h){
+    if((h - 1)/2 != h){
       aux = pq->heapArray[(h - 1)/2];
       pq->heapArray[(h - 1)/2] = pq->heapArray[h];
       pq->heapArray[h] = aux;
