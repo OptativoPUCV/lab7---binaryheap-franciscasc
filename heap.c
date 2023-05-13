@@ -87,8 +87,11 @@ void heap_pop(Heap* pq){
 
     if(pq->heapArray[menor].priority > pq->size -1 && pq->heapArray[mayor].priority > pq->size - 1) 
       break;
+    
+    h = mayor;
   }
   pq->heapArray[h] = aux;
+  
 }
 
 Heap* createHeap(){
