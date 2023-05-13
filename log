@@ -1685,3 +1685,13 @@ Sat 13 May 2023 04:01:34 AM UTC:
  tests:  7|1
 total_score: 60/70
 19c919b
+Sat 13 May 2023 04:02:32 AM UTC: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:74:13: error: expected expression before ‘;’ token
+   74 |       aux = ;
+      |             ^
+Compilation failed
+82f1775
