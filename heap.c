@@ -55,7 +55,6 @@ void heap_push(Heap* pq, void* data, int priority){
 void heap_pop(Heap* pq){
   int h = 0;
   heapElem aux =  pq->heapArray[h];
- // pq->heapArray[h].priority = 0;
   pq->heapArray[h] = pq->heapArray[(pq->size) - 1];
   pq->heapArray[(pq->size) - 1] = aux;
   pq->heapArray[h].priority = 0; 
@@ -65,10 +64,10 @@ void heap_pop(Heap* pq){
     //ver cuál hijo es mayor 
     int mayor;
     if(pq->heapArray[(2*h) +1].priority > pq->heapArray[(2*h) + 2].priority){
-      mayor = (2*h) + 1;
+      mayor = (2*h) + 1; //izquierdo
     }
     else{
-      mayor = (2*h) + 2;
+      mayor = (2*h) + 2; //derecho
     }
 
     if(mayor != h){
@@ -105,7 +104,7 @@ void heap_pop(Heap* pq){
     if(pq->heapArray[(2*h + 1)].priority > pq->size - 1 && pq->heapArray[(2*h + 2)].priority > pq->size - 1) 
       break;
 
-    //pq->heapArray[h] = pq->heapArray[(h - 1)/2];
+    pq->heapArray[h] = pq->heapArray[(h - 1)/2];
   }
   
 }
