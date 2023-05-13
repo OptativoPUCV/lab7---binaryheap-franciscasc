@@ -89,7 +89,7 @@ void heap_pop(Heap* pq){
       break;
     
   }
-  pq->heapArray[(pq->size) - 1] = aux;
+  //pq->heapArray[(pq->size) - 1] = aux;
   pq->size--;
 }
 
