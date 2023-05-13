@@ -63,25 +63,29 @@ void heap_pop(Heap* pq){
   while(h < pq->size - 1){    
     
     //ver cuál hijo es mayor 
-    /*heapElem mayor;
+    heapElem mayor;
     if(pq->heapArray[(2*h) +1].priority > pq->heapArray[(2*h) + 2].priority){
       mayor = pq->heapArray[(2*h) + 1];
     }
     else{
       mayor = pq->heapArray[(2*h) + 2];
-    }*/
+    }
 
-    if((2*h) + 2 < (pq->size) -1 && pq->heapArray[h].priority < pq->heapArray[(2*h) +2].priority){
-      aux = pq->heapArray[(2*h) +2];
-      pq->heapArray[(2*h) +2] = pq->heapArray[h];
-      pq->heapArray[h] = aux;
-      
-      /*aux = mayor;
+    if(pq->heapArray[h].priority < mayor.priority){
+      aux = mayor;
       mayor = pq->heapArray[h];
-      pq->heapArray[h] = aux;*/
+      pq->heapArray[h] = aux;
       h = (2*h) + 2;
       break;
     }
+
+    /*if(pq->heapArray[h].priority > mayor.priority){
+      aux = pq->heapArray[h];
+      pq->heapArray[h] = mayor;
+      mayor = aux;
+      h = (2*h) + 1;
+      break;
+    }*/
     
     if(pq->heapArray[(2*h + 1)].priority > pq->size - 1 && pq->heapArray[(2*h + 2)].priority > pq->size - 1) 
       break;
