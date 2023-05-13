@@ -1168,3 +1168,17 @@ Sat 13 May 2023 12:12:49 AM UTC:
  tests:  7|1
 total_score: 50/70
 0c1361a
+Sat 13 May 2023 12:13:49 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:74:78: error: expected ‘)’ before ‘{’ token
+   74 |     if((2*h) + 2 < pq->size - 1 && pq->heapArray[h].priority < mayor.priority{
+      |       ~                                                                      ^
+      |                                                                              )
+heap.c:92:3: error: expected expression before ‘}’ token
+   92 |   }
+      |   ^
+Compilation failed
+d694f5a
