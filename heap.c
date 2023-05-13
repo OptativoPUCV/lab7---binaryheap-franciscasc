@@ -57,7 +57,6 @@ void heap_pop(Heap* pq){
   heapElem aux =  pq->heapArray[h];
   pq->heapArray[h].priority = 0; 
   pq->heapArray[h] = pq->heapArray[(pq->size) - 1];
-  pq->heapArray[(pq->size) - 1] = aux;
   pq->size--;
   
   while(h < pq->size - 1){    
@@ -91,6 +90,7 @@ void heap_pop(Heap* pq){
     
   }
   h = (h - 1)/2;
+  pq->heapArray[(pq->size) - 1] = aux;
 }
 
 Heap* createHeap(){
