@@ -55,9 +55,10 @@ void heap_push(Heap* pq, void* data, int priority){
 void heap_pop(Heap* pq){
   int h = 0;
   heapElem aux =  pq->heapArray[h];
-  pq->heapArray[h] = pq->heapArray[(pq->size) - 1];
-  pq->heapArray[(pq->size) - 1] = aux;
   pq->heapArray[h].priority = 0; 
+  pq->heapArray[h] = pq->heapArray[(pq->size) - 1];
+  //pq->heapArray[(pq->size) - 1] = aux;
+  
   pq->size--;
 
   while(h < pq->size - 1){    
@@ -77,30 +78,14 @@ void heap_pop(Heap* pq){
       h = mayor;
     }
     
-    /*if((h - 1)/2 < pq->size - 1 && pq->heapArray[h].priority > pq->heapArray[(h - 1)/2].priority){
-      aux = pq->heapArray[h];
-      pq->heapArray[h] =  pq->heapArray[(h - 1)/2];
-      pq->heapArray[(h - 1)/2] = aux;
-      h = (h - 1)/2;
-      //break;
-    }
-    
-    if((2*h) + 2 < pq->size - 1 && pq->heapArray[h].priority < mayor.priority){
+    /*if((2*h) + 2 < pq->size - 1 && pq->heapArray[h].priority < mayor.priority){
       aux = mayor;
       mayor = pq->heapArray[h];
       pq->heapArray[h] = aux;
       h = (2*h) + 2;
       //break;
-    }
-
-    if((2*h) + 1 < pq->size - 1 && pq->heapArray[h].priority < mayor.priority){
-      aux = mayor;
-      mayor = pq->heapArray[h];
-      pq->heapArray[h] = aux;
-      h = (2*h) + 1;
-      //break;
     }*/
-     pq->heapArray[h] = pq->heapArray[mayor];
+    
     if(pq->heapArray[(2*h + 1)].priority > pq->size - 1 && pq->heapArray[(2*h + 2)].priority > pq->size - 1) 
       break;
 
