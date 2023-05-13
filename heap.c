@@ -61,12 +61,14 @@ void heap_pop(Heap* pq){
   
   while(h < pq->size - 1){    
     //ver cuál hijo es mayor 
-    int mayor;
+    int mayor, menor;
     if(pq->heapArray[(2*h) +1].priority > pq->heapArray[(2*h) + 2].priority){
       mayor = (2*h) + 1; //izquierdo
+      menor = (2*h) + 2;
     }
     else{
       mayor = (2*h) + 2; //derecho
+      menor = (2*h) + 1; 
     }
 
     if(mayor != h){
@@ -82,6 +84,13 @@ void heap_pop(Heap* pq){
       pq->heapArray[(h - 1)/2] = aux;
       h = (h - 1)/2;
       //break;
+    }
+
+    if(menor < pq->size - 1 && pq->heapArray[menor].priority > pq->heapArray[(h - 1)/2].priority){
+      aux = pq->heapArray[h];
+      pq->heapArray[h] = pq->heapArray[(h - 1)/2];
+      pq->heapArray[(h - 1)/2] = aux;
+      h = (h - 1)/2;
     }
     
     if(pq->heapArray[(2*h + 1)].priority > pq->size -1 && pq->heapArray[(2*h + 2)].priority > pq->size - 1) 
